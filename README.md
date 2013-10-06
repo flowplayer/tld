@@ -33,10 +33,13 @@ etc.
 
 ### Players
 
-At release time the commercial and unlimited players are built using the ```secondary``` file.
+At release time the commercial and unlimited players are built using the ```secondary-<version>```
+file. During development the latest ```secondary``` (unversioned) can be used for example by issuing
+```make VERSION=5.8-dev all```.
 
 Makefile example which reads ```secondary-<version>``` if present or the latest version of
-```secondary``` (for dev builds: ```make VERSION=5.8-dev all```):
+```secondary``` thus ensuring that the latest list is used in case copying it to
+```secondary-<releaseversion>``` was forgotten before triggering the release builds:
 
 ```make
 TLD_DIR = ../tld
