@@ -35,13 +35,17 @@ etc.
 
 At release time the commercial and unlimited players are built using the ```secondary``` file.
 
-Makefile example:
+Makefile example which reads ```secondary-<version>``` if present or the latest version of
+```secondary``` (for dev builds: ```make VERSION=5.8-dev all```):
 
 ```make
-TLD=$(shell uniq ../tld/secondary | sort | awk '{ ORS = "," } { print $$0 }' | sed 's/,$$//')
+TLD_DIR = ../tld
+TLD=$(shell tld=secondary-$(VERSION) && cd $(TLD_DIR) && \
+    test -r $$tld || tld=secondary && \
+    uniq $$tld | sort | awk '{ ORS = "," } { print }' | sed 's/,$$//')
 ```
-will store all unique secondary TLDs in a sorted comma separated string which can be inserted where
-required like so:
+The above will store all unique secondary TLDs in a sorted comma separated string which can be
+inserted where required like so:
 ```make
 key:
         @ sed 's/@TLD/$(TLD)/' somewhere/keycheck >> $(DIST)/key
