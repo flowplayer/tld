@@ -61,9 +61,8 @@ admin builders must parse the latest ```secondary-<version>``` list for each pla
 ```secondary-5.5``` for Flowplayer HTML5 version 5.5 and ```secondary-3.2.17``` for Flowplayer Flash
 3.2.17.
 
+For account/adming updates therefore the ```secondary-<releaseversion>``` **must** be present.
+
 ## TODO
 
-```make release``` or rather ```make 5.5.``` in a player repo should trigger a copy of
-```tld/secondary``` to ```tld/secondary-5.5``` automatically.
-
-Historic versions can be added manually as reference for support issues etc.
+Historic versions to be added manually as reference for support issues etc.
