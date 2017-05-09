@@ -1,0 +1,16 @@
+{
+    "author": "Anssi Piirainen",
+    "name": "tld",
+    "description": "List of secondary top level domains (TLD) for subdomain handling in Flowplayer license key validation.",
+    "version": "0.0.1",
+    "homepage": "http://flowplayer.org",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:flowplayer/tld.git"
+    },
+    "dependencies": {
+    },
+    "devDependencies": {},
+    "optionalDependencies": {},
+    "main": "index.js"
+}
